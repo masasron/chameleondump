@@ -1,7 +1,7 @@
 import struct
 import asyncio
 from enum import Enum
-from utils.print_with_color import print_with_color
+from ..utils.print_with_color import print_with_color
 
 class ChameleonUltraCommand(Enum):
     SET_SLOT = 1003

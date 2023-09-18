@@ -2,9 +2,9 @@ import os
 import asyncio
 import argparse
 from bleak import BleakClient
-from devices import SUPPORTED_DEVICES
-from utils.print_with_color import print_with_color
-from utils.ble_utils import find_device, is_macos_bluetooth_pairing_dialog_active, pair_macos_bluetooth_device
+from .devices import SUPPORTED_DEVICES
+from .utils.print_with_color import print_with_color
+from .utils.ble_utils import find_device, is_macos_bluetooth_pairing_dialog_active, pair_macos_bluetooth_device
 
 ASCII_ART = "____            ________                         __                 ____                      \n" \
 "/X    ~-.       / ____/ /_  ____ _____ ___  ___  / /__  ____  ____  / __ \\__  ______ ___  ____ \n" \
@@ -59,7 +59,7 @@ async def main(loop):
     await device_instance.exploit()
     await client.disconnect()
 
-if __name__ == "__main__":
+def cli():
     try:
         loop = asyncio.get_event_loop()
         loop.run_until_complete(main(loop))

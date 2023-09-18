@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='chameleondump',
-    version='0.1',
+    version='0.1.5',
     description="Dump RFID tag IDs from ChameleonUltra devices",
     packages=find_packages(),
     author='Ron Masas',
@@ -13,7 +13,9 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'chameleondump = chameleondump.__main__:main',
+            'chameleondump = chameleondump.chameleondump:cli',
         ],
     },
+    license='GNU GPLv3',
+    keywords = ['RFID', 'NFC', 'ChameleonUltra', 'ChameleonMini', 'BLE', 'Bluetooth'],
 )

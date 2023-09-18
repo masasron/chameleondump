@@ -24,8 +24,7 @@ when they first set up the device.
 
 ### For Users
 
-If the system doesn't make changing the default PIN mandatory, it's strongly
-recommended that you do so yourself to enhance your device's security.
+Change the default PIN code of your ChameleonUltra device.
 
 ## Installation
 
@@ -35,7 +34,28 @@ recommended that you do so yourself to enhance your device's security.
 - Python 3.6 or higher
 - pip package manager
 
-### Setup
+### Installing from PyPI
+
+```bash
+pip install chameleondump
+```
+
+## Usage
+
+```bash
+usage: chameleondump [-h] [--device {ChameleonUltra}] [--pin PIN] [--mask MASK]
+
+ChameleonDump
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --device {ChameleonUltra}
+                        The target device
+  --pin PIN             The PIN to use for pairing, leave empty to use the default PIN
+  --mask MASK           Mask the RFID tag IDs
+```
+
+### Building & Installing from Source
 
 1. Clone the repository:
    ```bash
@@ -47,25 +67,13 @@ recommended that you do so yourself to enhance your device's security.
    cd chameleondump
    ```
 
-3. Install the required packages:
+3. Build & Install
    ```bash
-   pip install -r requirements.txt
+   python3 setup.py sdist bdist_wheel
+   pip3 install dist/chameleondump-0.1.5-py3-none-any.whl
    ```
-
-## Usage
-
-To use ChameleonDump, execute the following command:
-
-```bash
-python main.py --device <Device_Name> [--pin <PIN>]
-```
-
-### Options
-
-- `--device`: An optional argument specifies the target device you wish to
-  connect to.
-- `--pin`: An optional argument specifying the PIN used for pairing. If not
-  provided, the default PIN will be used.
+   **Note:** The name of the wheel file may vary depending on the version of the
+   tool.
 
 ### Supported Devices
 

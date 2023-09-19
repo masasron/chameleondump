@@ -1,3 +1,5 @@
+![](./illustration.png)
+
 # ChameleonDump
 
 ## Overview
